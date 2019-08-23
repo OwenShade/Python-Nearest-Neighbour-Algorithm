@@ -1,0 +1,30 @@
+# NNA program plan (Unit 16)
+
+
+1. First will need to read in the file of cities. Will need to use .split to split each piece of information into dictionaries.
+For example, city names will have a dictionary, x position and y position will be the other 2 dictionaries. These 3
+dictionaries will be in a list so we can get each related item.
+
+
+2. Thinking about the output, we will need to denote a point on the canvas for each city. The Canvas module will need to be
+imported and then used to draw a point for each city using the citys x, y value. I'll create a function which defines how to draw the point and call it later when I
+need it. For visual benefit we will also need to label each point with the city name. This can all be done by using the list of dictionaries and the Canvas I think.
+
+
+3. We need a function which can be used over and over again to find the next nearest city from any given city so we can call it when calculating the shortest route.
+Best way to do this is probably to have another function which calculates the total distance between two given points (cities), and call this inside the nearest city
+function. Distance between 2 points can be measured using magnitude.
+
+
+4. Need another function which changes the order of the dictionaries in relation to the order of the tour. Eg, if the order of the city dictionary is originally
+Edinburgh, Aberdeen, Glasgow but part 3 finds out the quickest route is Glasgow, Aberdeen, Edinburgh the order of the dictionaries will need to be changed. I'm
+not sure if this is the best way to do it but it seems the sensible thing to do in order to make part 5 easier. Pretty sure I done a sort like this in AH, I'll
+need a temp variable when switching around the two bit of information I think.
+
+
+5. Finally we will need to create a function which draws the movement of the 'salesman'. I'll use the function in part 2 to draw the cities on the canvas,
+then just use a create_line method from the Canvas module to show the movement. I'll need to iterate through each city in the newly ordered dictionary 
+so I'll need a loop counter initialised to 0 and incremented each time we go through the loop( while counter < len(cities) ).
+
+
+
